@@ -16,7 +16,10 @@ describe Game do
       expect{game.put_your_ship(2,4)}.to raise_error('You cannot place your ship here, go find a different spot')
     end
 
-
+    it 'forbids from placing a ship outside the grid' do
+      game = Game.new
+      expect{game.put_your_ship(11,4)}.to raise_error('You cannot place your ship outisde the grid, find a better place')
+    end
 
 
 end
